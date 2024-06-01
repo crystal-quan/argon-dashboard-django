@@ -7,8 +7,11 @@ from django.contrib import admin
 from django.urls import path, include  # add this
 
 urlpatterns = [
-    path('admin/', admin.site.urls),          # Django admin route
+    path('admin/', admin.site.urls),  # Django admin route
     path("", include("apps.authentication.urls")),  # Auth routes - login / register
-    path("", include("apps.home.urls")),           # UI Kits Html files
-    path('vehicle/', include('apps.vehicle.urls')),
+    path("", include("apps.home.urls")),  # UI Kits Html files
+    path("", include("apps.vehicle.urls")),  # UI Kits Html files
+    path("__debug__/", include("debug_toolbar.urls")),
+    path("vehicles", include("apps.vehicle.urls"), name="vehicles"),
+
 ]

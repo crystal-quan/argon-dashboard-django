@@ -29,8 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.home',   # Enable the inner home (home)
-    "apps.vehicle.apps.VehicleConfig"
+    'apps.home',  # Enable the inner home (home)
+    "apps.vehicle",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -42,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -64,6 +66,11 @@ TEMPLATES = [
         },
     },
 ]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
@@ -120,7 +127,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 )
-
 
 #############################################################
 #############################################################

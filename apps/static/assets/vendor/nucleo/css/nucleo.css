@@ -568,5 +568,8 @@ License - nucleoapp.com/license/
     content: "\ea65";
 }
 
+.ni-truck::before {
+    content: "\ea66";
+}
 
 /* all icon font classes list here */
